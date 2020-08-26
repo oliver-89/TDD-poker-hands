@@ -25,6 +25,9 @@ public class PokerSort {
                 sortResult.add(calcPokerNumber.lastIndexOf(2) + 2);
             }
             if (calcPokerNumber.contains(1)) {
+                if (calcPokerNumber.indexOf(1) != calcPokerNumber.lastIndexOf(1)) {
+                    sortResult.add(calcPokerNumber.lastIndexOf(1) + 2);
+                }
                 sortResult.add(calcPokerNumber.indexOf(1) + 2);
             }
         }

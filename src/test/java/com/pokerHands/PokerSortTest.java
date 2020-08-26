@@ -81,4 +81,18 @@ public class PokerSortTest {
         assertEquals(4,result[3]);
         assertEquals(3,result[4]);
     }
+
+    @Test
+    void should_return_365_when_sort_poker_number_given_3D_3H_5S_3C_6D() {
+        //given
+        String[] poker = {"3D", "3H", "3C", "5S", "6D"};
+
+        //when
+        Integer[] result = pokerSort.sortPokerNumber(poker);
+
+        //then
+        assertEquals(3,result[0]);
+        assertEquals(6,result[1]);
+        assertEquals(5,result[2]);
+    }
 }
