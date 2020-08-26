@@ -16,7 +16,7 @@ public class PokerType {
   private Integer[] calcPokerNumber(Integer[] pokersNumber){
     Integer[] poker = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     for (int i = 0; i < pokersNumber.length; i++) {
-      poker[pokersNumber[i] - 1] ++;
+      poker[pokersNumber[i] - 2] ++;
     }
     return poker;
   }
@@ -25,16 +25,16 @@ public class PokerType {
     int maxSamePokerNumber = (int) Collections.max(Arrays.asList(pokersNumber));
     int pairPokerNumber = 0;
     if (maxSamePokerNumber == 2) {
-      for (int i = 0; i < pokersNumber.length; i++) {
-        if (pokersNumber[i] == 2) {
-          pairPokerNumber ++;
+      for (Integer integer : pokersNumber) {
+        if (integer == 2) {
+          pairPokerNumber++;
         }
       }
       return pairPokerNumber;
     }
     if (maxSamePokerNumber == 3) {
-      for (int i = 0; i < pokersNumber.length; i++) {
-        if (pokersNumber[i] == 2) {
+      for (Integer integer : pokersNumber) {
+        if (integer == 2) {
           return 6;
         }
       }
@@ -42,6 +42,18 @@ public class PokerType {
     }
     if (maxSamePokerNumber == 4) {
       return 7;
+    }
+    int count = 0;
+    for (int i = 0; i < pokersNumber.length; i++) {
+      if (pokersNumber[i] != 0) {
+        count ++;
+      }
+      if (count == 5) {
+        return 4;
+      }
+      if (count != 0 && pokersNumber[i] == 0) {
+        break;
+      }
     }
     return pairPokerNumber;
   }
@@ -55,13 +67,13 @@ public class PokerType {
         return 10;
       }
       if (pokerNumber == 'J') {
-        return 10;
+        return 11;
       }
       if (pokerNumber == 'Q') {
-        return 10;
+        return 12;
       }
       if (pokerNumber == 'K') {
-        return 10;
+        return 13;
       }
       return Integer.parseInt(String.valueOf(pokerNumber));
     }).toArray(Integer[]::new);

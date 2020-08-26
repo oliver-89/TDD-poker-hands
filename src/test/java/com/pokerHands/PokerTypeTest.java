@@ -67,4 +67,16 @@ public class PokerTypeTest {
     //then
     assertEquals(6,result);
   }
+
+  @Test
+  void should_return_straight_when_verify_poker_type_given_3D_4S_5H_6D_7C() {
+    //given
+    String[] poker = {"3D", "4S", "5H", "6D", "7C"};
+
+    //when
+    int result = pokerType.packPokerType(poker);
+
+    //then
+    assertEquals(4,result);
+  }
 }
