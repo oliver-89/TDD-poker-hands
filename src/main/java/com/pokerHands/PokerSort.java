@@ -33,6 +33,8 @@ public class PokerSort {
 
     private Boolean hasSamePokerNumber(String[] poker) {
         PokerType pokerType = new PokerType();
-        return pokerType.packPokerType(poker) != 8 && pokerType.packPokerType(poker) != 5;
+        return pokerType.packPokerType(poker) != 8 &&
+                pokerType.packPokerType(poker) != 5 &&
+                pokerType.packPokerType(poker) != 4;
     }
 }
