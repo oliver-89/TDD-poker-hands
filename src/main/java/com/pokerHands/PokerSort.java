@@ -22,7 +22,10 @@ public class PokerSort {
                 sortResult.add(calcPokerNumber.indexOf(3) + 2);
             }
             if (calcPokerNumber.contains(2)) {
-                sortResult.add(calcPokerNumber.lastIndexOf(2) + 2);
+                if (calcPokerNumber.indexOf(2) != calcPokerNumber.lastIndexOf(2)) {
+                    sortResult.add(calcPokerNumber.lastIndexOf(2) + 2);
+                }
+                sortResult.add(calcPokerNumber.indexOf(2) + 2);
             }
             if (calcPokerNumber.contains(1)) {
                 if (calcPokerNumber.indexOf(1) != calcPokerNumber.lastIndexOf(1)) {
