@@ -23,20 +23,23 @@ public class PokerType {
 
   private int verifyPokerType(Integer[] pokersNumber, Character[] pokersSuit) {
     int maxSamePokerNumber = Collections.max(Arrays.asList(pokersNumber));
-    if (maxSamePokerNumber == 2) {
-      return calcPairPokerNumber(pokersNumber);
-    }
-    if (maxSamePokerNumber == 3) {
-      return isThreeOfKindOrFullHouse(pokersNumber);
+    if (isStraight(pokersNumber) & isFlush(pokersSuit)) {
+      return 8;
     }
     if (maxSamePokerNumber == 4) {
       return 7;
     }
-    if (isStraight(pokersNumber)) {
-      return 4;
+    if (maxSamePokerNumber == 3) {
+      return isThreeOfKindOrFullHouse(pokersNumber);
     }
     if (isFlush(pokersSuit)) {
       return 5;
+    }
+    if (isStraight(pokersNumber)) {
+      return 4;
+    }
+    if (maxSamePokerNumber == 2) {
+      return calcPairPokerNumber(pokersNumber);
     }
     return 0;
   }
