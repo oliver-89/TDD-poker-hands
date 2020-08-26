@@ -20,4 +20,19 @@ public class PokerTypeTest {
     assertEquals("pair",result[0]);
     assertEquals("K",result[1]);
   }
+
+  @Test
+  void should_return_two_pairs_and_K_when_verify_poker_type_given_KD_KS_2H_2D_9C() {
+    //given
+    String[] poker = {"KD", "KS", "2H", "2D", "9C"};
+
+    //when
+    String[] result = pokerType.verifyPokerType(poker);
+
+    //then
+    assertEquals("two pairs",result[0]);
+    assertEquals("K",result[1]);
+  }
+
+
 }
