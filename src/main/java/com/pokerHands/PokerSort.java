@@ -15,8 +15,18 @@ public class PokerSort {
             return pokerNumber;
         }
         if (hasSamePokerNumber(poker)) {
-            sortResult.add(calcPokerNumber.indexOf(4) + 2);
-            sortResult.add(calcPokerNumber.indexOf(1) + 2);
+            if (calcPokerNumber.contains(4)) {
+                sortResult.add(calcPokerNumber.indexOf(4) + 2);
+            }
+            if (calcPokerNumber.contains(3)) {
+                sortResult.add(calcPokerNumber.indexOf(3) + 2);
+            }
+            if (calcPokerNumber.contains(2)) {
+                sortResult.add(calcPokerNumber.lastIndexOf(2) + 2);
+            }
+            if (calcPokerNumber.contains(1)) {
+                sortResult.add(calcPokerNumber.indexOf(1) + 2);
+            }
         }
         return sortResult.toArray(new Integer[5]);
     }
