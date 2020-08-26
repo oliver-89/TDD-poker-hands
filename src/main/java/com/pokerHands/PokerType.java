@@ -8,16 +8,8 @@ public class PokerType {
   public int packPokerType(String[] poker) {
     Integer[] pokersNumber = PokerFormat.formatPokerNumber(poker);
     Character[] pokersSuit = PokerFormat.formatPokerSuit(poker);
-    Integer[] result = calcPokerNumber(pokersNumber);
+    Integer[] result = PokerFormat.calcPokerNumber(pokersNumber);
     return verifyPokerType(result, pokersSuit);
-  }
-
-  private Integer[] calcPokerNumber(Integer[] pokersNumber){
-    Integer[] poker = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    for (Integer integer : pokersNumber) {
-      poker[integer - 2]++;
-    }
-    return poker;
   }
 
   private int verifyPokerType(Integer[] pokersNumber, Character[] pokersSuit) {

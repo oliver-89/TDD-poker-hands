@@ -28,4 +28,12 @@ public class PokerFormat {
     public static Character[] formatPokerSuit(String[] poker) {
         return Arrays.stream(poker).map(s -> s.charAt(1)).toArray(Character[]::new);
     }
+
+    public static Integer[] calcPokerNumber(Integer[] pokersNumber){
+        Integer[] poker = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        for (Integer integer : pokersNumber) {
+            poker[integer - 2]++;
+        }
+        return poker;
+    }
 }
