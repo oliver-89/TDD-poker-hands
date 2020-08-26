@@ -47,6 +47,7 @@ public class PokerSort {
         PokerType pokerType = new PokerType();
         return pokerType.packPokerType(poker) != 8 &&
                 pokerType.packPokerType(poker) != 5 &&
-                pokerType.packPokerType(poker) != 4;
+                pokerType.packPokerType(poker) != 4 &&
+                pokerType.packPokerType(poker) != 0;
     }
 }
