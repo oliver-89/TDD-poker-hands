@@ -29,9 +29,15 @@ public class PokerSort {
             }
             if (calcPokerNumber.contains(1)) {
                 if (calcPokerNumber.indexOf(1) != calcPokerNumber.lastIndexOf(1)) {
-                    sortResult.add(calcPokerNumber.lastIndexOf(1) + 2);
+                    for (int i = calcPokerNumber.size() - 1; i >= 0; i--) {
+                        if (calcPokerNumber.get(i) == 1) {
+                            sortResult.add(i + 2);
+                        }
+                    }
                 }
-                sortResult.add(calcPokerNumber.indexOf(1) + 2);
+                if (calcPokerNumber.indexOf(1) == calcPokerNumber.lastIndexOf(1)) {
+                    sortResult.add(calcPokerNumber.indexOf(1) + 2);
+                }
             }
         }
         return sortResult.toArray(new Integer[5]);
