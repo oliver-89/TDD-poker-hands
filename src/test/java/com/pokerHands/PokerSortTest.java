@@ -49,4 +49,20 @@ public class PokerSortTest {
         assertEquals(3,result[0]);
         assertEquals(6,result[1]);
     }
+
+    @Test
+    void should_return_K7653_when_sort_poker_number_given_3D_KD_5D_6D_7D() {
+        //given
+        String[] poker = {"3D", "KD", "5D", "6D", "7D"};
+
+        //when
+        Integer[] result = pokerSort.sortPokerNumber(poker);
+
+        //then
+        assertEquals(13,result[0]);
+        assertEquals(7,result[1]);
+        assertEquals(6,result[2]);
+        assertEquals(5,result[3]);
+        assertEquals(3,result[4]);
+    }
 }
