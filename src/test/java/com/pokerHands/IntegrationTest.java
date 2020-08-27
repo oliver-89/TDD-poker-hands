@@ -47,6 +47,19 @@ public class IntegrationTest {
         assertEquals("Black wins. - with high card: 9", result);
     }
 
+    @Test
+    void should_return_black_wins_when_get_poker_duel_result_given_2H_3D_5S_9C_KD_2D_3H_5C_9S_KH() {
+        //given
+        String[] black_poker = {"2H", "3D", "5S", "9C", "KD"};
+        String[] white_poker = {"2C", "3H", "5C", "9S", "KH"};
+
+        //when
+        String result = pokerDuel.getPokerDuelResult(black_poker, white_poker);
+
+        //then
+        assertEquals("Tie.", result);
+    }
+
 
 
 }
