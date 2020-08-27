@@ -21,7 +21,7 @@ public class PokerDuel {
             return "White wins. - with " + POKER_TYPE[whitePokerTypeSerial] +
                     ": " + pokerSort.sortPokerNumber(white_poker)[0];
         }
-        for (int i = 0; i < blackPokerSort.length; i++) {
+        for (int i = 0; i < blackPokerSort.length && blackPokerSort[i] != null; i++) {
             if (blackPokerSort[i] > whitePokerSort[i]) {
                 return "Black wins. - with " + POKER_TYPE[blackPokerTypeSerial] +
                         ": " + pokerSort.sortPokerNumber(black_poker)[i];
