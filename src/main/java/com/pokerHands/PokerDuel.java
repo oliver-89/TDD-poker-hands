@@ -24,11 +24,11 @@ public class PokerDuel {
         for (int i = 0; i < blackPokerSort.length; i++) {
             if (blackPokerSort[i] > whitePokerSort[i]) {
                 return "Black wins. - with " + POKER_TYPE[blackPokerTypeSerial] +
-                        ": " + pokerSort.sortPokerNumber(black_poker)[0];
+                        ": " + pokerSort.sortPokerNumber(black_poker)[i];
             }
             if (blackPokerSort[i] < whitePokerSort[i]) {
                 return "White wins. - with " + POKER_TYPE[whitePokerTypeSerial] +
-                        ": " + pokerSort.sortPokerNumber(white_poker)[0];
+                        ": " + pokerSort.sortPokerNumber(white_poker)[i];
             }
         }
         return "Tie.";
