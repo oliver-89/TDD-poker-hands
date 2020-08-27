@@ -35,6 +35,19 @@ public class PokerDuelTest {
     }
 
     @Test
+    void should_return_black_wins_when_get_poker_duel_result_given_3D_4S_5D_6D_7D_4S_5H_6S_7C_8C() {
+        //given
+        String[] black_poker = {"4S", "5H", "6S", "7C", "8C"};
+        String[] white_poker = {"3D", "4S", "5D", "6D", "7D"};
+
+        //when
+        String result = pokerDuel.getPokerDuelResult(black_poker, white_poker);
+
+        //then
+        assertEquals("Black wins. - with straight: 8", result);
+    }
+
+    @Test
     void should_return_White_wins_when_get_poker_duel_result_given_3D_4S_5D_6D_7D_4S_5H_6S_7C_8C() {
         //given
         String[] black_poker = {"3D", "4S", "5D", "6D", "7D"};
